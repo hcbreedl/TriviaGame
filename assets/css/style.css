@@ -1,0 +1,26 @@
+body {
+	font-family: Georgia;
+}
+h1 {
+	text-align: center;
+	padding: 20px;
+}
+
+#startButton{
+	border-radius: 0;
+}
+
+#button {
+	border-radius: 0;
+	border: none;
+	margin: 0;
+}
+
+#button:focus {
+	outline: 0;
+}
+
+#title {
+	/*margin-top: 100px;*/
+}
+
