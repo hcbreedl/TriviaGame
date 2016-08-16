@@ -1,5 +1,7 @@
 body {
 	font-family: Georgia;
+	background: url('https://github.com/hcbreedl/TriviaGame/blob/master/assets/images/glare_background_blur_dark_63553_1920x1080.jpg?raw=true');
+	background-size: 100%;
 }
 h1 {
 	text-align: center;
@@ -7,35 +9,44 @@ h1 {
 }
 
 #gameOver {
-	border-radius: 0;
+	border-radius: 2px;
 	border: none;
 	background-color: rgba(255, 0, 0, 0.5);
 	color: white;
 }
 
 #startButton{
-	border-radius: 0;
+	border-radius: 2px;
+	background-color: #ffa31a;
 }
 
 #button {
-	border-radius: 0;
+	border-radius: 2px;
 	border: none;
 	margin: 2px;
 }
 
 #button:focus {
 	outline: 0;
+	font-family: Georgia;
 }
 
 #title {
 	/*margin-top: 100px;*/
+	color: white;
+}
+
+#h1 {
+	font-family: 'Satisfy', cursive;
+	font-size: 58px;
 }
 
 #background {
 	padding: 10px;
-	background-color: #f48024;
+	background-color: rgba(0, 0, 0, 0.5);
 	width: 975px;
 	height: 400px;
+	border-radius: 10px;
 }
 
 .correct {
@@ -46,5 +57,9 @@ h1 {
 .incorrect {
 	color: white;
 	background-color: #00b796;
+}
+
+#timer {
+	color: white;
 }
 
