@@ -20,7 +20,7 @@ h1 {
 #button {
 	border-radius: 0;
 	border: none;
-	margin: 0;
+	margin: 2px;
 }
 
 #button:focus {
@@ -29,5 +29,22 @@ h1 {
 
 #title {
 	/*margin-top: 100px;*/
+}
+
+#background {
+	padding: 10px;
+	background-color: #f48024;
+	width: 975px;
+	height: 400px;
+}
+
+.correct {
+	color: white;
+	background-color: rgba(255, 0, 0, 0.5);
+}
+
+.incorrect {
+	color: white;
+	background-color: #00b796;
 }
 
