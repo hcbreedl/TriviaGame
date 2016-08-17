@@ -91,11 +91,11 @@ function question1 () {
 
 	resetColor();
 
-	$(q1).html("Is Houston awesome?");
-	$(a1).html("Nope!");
-	$(a2).html("Of Course!");
-	$(a3).html("Just a little awesome...");
-	$(a4).html("Who is Houston?");
+	$(q1).html("Who were the founders of Apple Computer Inc.?");
+	$(a1).html("Jennifer Aniston and Monica Lewinski");
+	$(a2).html("Steve Jobs, Steve Wosniak, and Ronald Wayne");
+	$(a3).html("Barack Obama and John Mayer");
+	$(a4).html("Nick Bartlett?");
 
 	fadeInChoices()
 
@@ -129,10 +129,10 @@ function question2 () {
 
 	resetColor();
 
-	$(q1).html("How old is Houston?");
-	$(a1).html("100");
-	$(a2).html("He is just a baby!");
-	$(a3).html("26");
+	$(q1).html("How much was the first Apple computer?");
+	$(a1).html("$100");
+	$(a2).html("$1000");
+	$(a3).html("$666.66");
 	$(a4).html("I don\'t know!");
 
 	fadeInChoices()
@@ -163,11 +163,11 @@ function question3 () {
 
 	resetColor();
 
-	$(q1).html("This is question 3");
-	$(a1).html("answer1");
-	$(a2).html("answer2");
-	$(a3).html("answer3");
-	$(a4).html("answer4- Correct");
+	$(q1).html("Which Apple store was the most expensive to build?");
+	$(a1).html("The one in at SouthPoint");
+	$(a2).html("The one is Hawaii");
+	$(a3).html("The one at the North Pole");
+	$(a4).html("The one in Manhattan");
 
 	fadeInChoices()
 
@@ -197,11 +197,11 @@ function question4 () {
 
 	resetColor();
 
-	$(q1).html("This is question 4");
-	$(a1).html("answer1- Correct");
-	$(a2).html("answer2");
-	$(a3).html("answer3");
-	$(a4).html("answer4");
+	$(q1).html("How many US states don't have an Apple store?");
+	$(a1).html("9");
+	$(a2).html("They all have one");
+	$(a3).html("Less than half of America");
+	$(a4).html("Only Alaska doesn't have one");
 
 	fadeInChoices()
 
@@ -231,11 +231,11 @@ function question5 () {
 
 	resetColor();
 
-	$(q1).html("This is question 5");
-	$(a1).html("answer1");
-	$(a2).html("answer2- Correct");
-	$(a3).html("answer3");
-	$(a4).html("answer4");
+	$(q1).html("Why was the Lisa computer given its name?");
+	$(a1).html("It was named after Steve Jobs' former lover");
+	$(a2).html("It was named after Steve Jobs' daughter");
+	$(a3).html("It was named after Lisa Stefanopolis");
+	$(a4).html("I don't even know what that computer is...");
 
 	fadeInChoices()
 
@@ -265,11 +265,11 @@ function question6 () {
 
 	resetColor();
 
-	$(q1).html("This is question 6");
-	$(a1).html("answer1");
-	$(a2).html("answer2");
-	$(a3).html("answer3");
-	$(a4).html("answer4- Correct");
+	$(q1).html("What year was the original Ipod released?");
+	$(a1).html("1970");
+	$(a2).html("1999");
+	$(a3).html("2000");
+	$(a4).html("2001");
 
 	fadeInChoices()
 
@@ -299,11 +299,11 @@ function question7 () {
 
 	resetColor();
 
-	$(q1).html("This is question 7");
-	$(a1).html("answer1");
-	$(a2).html("answer2");
-	$(a3).html("answer3- Correct");
-	$(a4).html("answer4");
+	$(q1).html("How many songs could the first Ipod hold?");
+	$(a1).html("27");
+	$(a2).html("100");
+	$(a3).html("1000");
+	$(a4).html("50");
 
 	fadeInChoices()
 
@@ -333,11 +333,11 @@ function question8 () {
 
 	resetColor();
 
-	$(q1).html("This is question 8");
-	$(a1).html("answer1- Correct");
-	$(a2).html("answer2");
-	$(a3).html("answer3");
-	$(a4).html("answer4");
+	$(q1).html("Before co-founding Apple, where did Steve Jobs work?");
+	$(a1).html("Atari");
+	$(a2).html("McDonals");
+	$(a3).html("IBM");
+	$(a4).html("Burger King");
 
 	fadeInChoices()
 
@@ -367,11 +367,11 @@ function question9 () {
 
 	resetColor();
 
-	$(q1).html("This is question 9");
-	$(a1).html("answer1");
-	$(a2).html("answer2- Correct");
-	$(a3).html("answer3");
-	$(a4).html("answer4");
+	$(q1).html("What religious practices did Steve Jobs hold?");
+	$(a1).html("Christianity");
+	$(a2).html("Buddhism");
+	$(a3).html("Muslim");
+	$(a4).html("Taoism");
 
 	fadeInChoices()
 
@@ -401,11 +401,11 @@ function question10 () {
 
 	resetColor();
 
-	$(q1).html("This is question 10");
-	$(a1).html("answer1");
-	$(a2).html("answer2");
-	$(a3).html("answer3");
-	$(a4).html("answer4- Correct");
+	$(q1).html("What was Apple's first slogan?");
+	$(a1).html("Apple is the Best");
+	$(a2).html("Computers! Computers! Computer!");
+	$(a3).html("Byte into a Pear");
+	$(a4).html("Byte into an Apple");
 
 	fadeInChoices()
 
