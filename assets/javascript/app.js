@@ -4,6 +4,7 @@ $( document ).ready(function() {
 var gameOver = $('<button id="gameOver" type="button" class="btn btn-default btn-lg btn-block">Oops! You ran out of time!<br>Click to start over!</button>');
 var youWin = $('<div id="title" class="col-xs-12"><h1 id="h1">You Win!<br>Play Again?</h1></div>');
 var startButton = $('<button id="startButton" type="button" class="btn btn-primary btn-lg btn-block">Click to Start</button>');
+var goodJob = $('<div id="goodJob">Good Job!</div>');
 
 var q1 = $('<div id="button" type="button" class="btn btn-primary btn-lg btn-block"></div>');
 var a1 = $('<button id="button" type="button" class="btn btn-default btn-lg btn-block"></button>');
@@ -30,7 +31,7 @@ function decrement(){
 	        $('.btn').remove();
 	        $('#title').append(gameOver).fadeIn(1000);
 	        $(gameOver).on('click', function() {
-	        	timerReset();
+	        	number = 21;
 	        	gameOver.remove();
 	        	question1();
 	    	})
@@ -69,6 +70,15 @@ function fadeInChoices() {
 	$('#title').append(a4.hide().fadeIn(3500));
 }
 
+function goodJob() {
+	$('#title').append(goodJob);
+	timeoutID = window.setTimeout(removeGoodJob, 1000);
+}
+
+function removeGoodJob() {
+  goodJob.remove();
+}
+
 
 // First questions load
 $('#startButton').on('click', function() {
@@ -99,8 +109,7 @@ function question1 () {
 		
 		removeAll();
 		
-		// question2();
-		question10();
+		question2();
 	});
 
 	//The incorrect answers turn red.
@@ -115,277 +124,277 @@ function question1 () {
 	});
 };
 
-// function question2 () {
-// 	timerReset();
+function question2 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("How old is Houston?");
-// 	$(a1).html("100");
-// 	$(a2).html("He is just a baby!");
-// 	$(a3).html("26");
-// 	$(a4).html("I don\'t know!");
+	$(q1).html("How old is Houston?");
+	$(a1).html("100");
+	$(a2).html("He is just a baby!");
+	$(a3).html("26");
+	$(a4).html("I don\'t know!");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a3).on('click', function() {
+	// The correct answer turns green.
+	$(a3).on('click', function() {
 		
-// 		stop();
-// 		removeAll();
+		stop();
+		removeAll();
 		
-// 		question3();
-// 	});
+		question3();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a1).on('click', function() {	
-// 		a1.css('color', 'red');
-// 	});
-// 	$(a2).on('click', function() {
-// 		a2.css('color', 'red');
-// 	});
-// 	$(a4).on('click', function() {
-// 		a4.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a1).on('click', function() {	
+		a1.css('color', 'red');
+	});
+	$(a2).on('click', function() {
+		a2.css('color', 'red');
+	});
+	$(a4).on('click', function() {
+		a4.css('color', 'red');
+	});
+}
 
-// function question3 () {
-// 	timerReset();
+function question3 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("This is question 3");
-// 	$(a1).html("answer1");
-// 	$(a2).html("answer2");
-// 	$(a3).html("answer3");
-// 	$(a4).html("answer4- Correct");
+	$(q1).html("This is question 3");
+	$(a1).html("answer1");
+	$(a2).html("answer2");
+	$(a3).html("answer3");
+	$(a4).html("answer4- Correct");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a4).on('click', function() {
-// 		a4.addClass('correct')
-// 		stop();
-// 		removeAll();
+	// The correct answer turns green.
+	$(a4).on('click', function() {
+		a4.addClass('correct')
+		stop();
+		removeAll();
 		
-// 		question4();
-// 	});
+		question4();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a1).on('click', function() {	
-// 		a1.css('color', 'red');
-// 	});
-// 	$(a2).on('click', function() {
-// 		a2.css('color', 'red');
-// 	});
-// 	$(a3).on('click', function() {
-// 		a3.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a1).on('click', function() {	
+		a1.css('color', 'red');
+	});
+	$(a2).on('click', function() {
+		a2.css('color', 'red');
+	});
+	$(a3).on('click', function() {
+		a3.css('color', 'red');
+	});
+}
 
-// function question4 () {
-// 	timerReset();
+function question4 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("This is question 4");
-// 	$(a1).html("answer1- Correct");
-// 	$(a2).html("answer2");
-// 	$(a3).html("answer3");
-// 	$(a4).html("answer4");
+	$(q1).html("This is question 4");
+	$(a1).html("answer1- Correct");
+	$(a2).html("answer2");
+	$(a3).html("answer3");
+	$(a4).html("answer4");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a1).on('click', function() {
-// 		a1.addClass('correct')
-// 		stop();
-// 		removeAll();
+	// The correct answer turns green.
+	$(a1).on('click', function() {
+		a1.addClass('correct')
+		stop();
+		removeAll();
 		
-// 		question5();
-// 	});
+		question5();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a4).on('click', function() {	
-// 		a4.css('color', 'red');
-// 	});
-// 	$(a2).on('click', function() {
-// 		a2.css('color', 'red');
-// 	});
-// 	$(a3).on('click', function() {
-// 		a3.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a4).on('click', function() {	
+		a4.css('color', 'red');
+	});
+	$(a2).on('click', function() {
+		a2.css('color', 'red');
+	});
+	$(a3).on('click', function() {
+		a3.css('color', 'red');
+	});
+}
 
-// function question5 () {
-// 	timerReset();
+function question5 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("This is question 5");
-// 	$(a1).html("answer1");
-// 	$(a2).html("answer2- Correct");
-// 	$(a3).html("answer3");
-// 	$(a4).html("answer4");
+	$(q1).html("This is question 5");
+	$(a1).html("answer1");
+	$(a2).html("answer2- Correct");
+	$(a3).html("answer3");
+	$(a4).html("answer4");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a2).on('click', function() {
-// 		a2.addClass('correct')
-// 		stop();
-// 		removeAll();
+	// The correct answer turns green.
+	$(a2).on('click', function() {
+		a2.addClass('correct')
+		stop();
+		removeAll();
 		
-// 		question6();
-// 	});
+		question6();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a4).on('click', function() {	
-// 		a4.css('color', 'red');
-// 	});
-// 	$(a1).on('click', function() {
-// 		a1.css('color', 'red');
-// 	});
-// 	$(a3).on('click', function() {
-// 		a3.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a4).on('click', function() {	
+		a4.css('color', 'red');
+	});
+	$(a1).on('click', function() {
+		a1.css('color', 'red');
+	});
+	$(a3).on('click', function() {
+		a3.css('color', 'red');
+	});
+}
 
-// function question6 () {
-// 	timerReset();
+function question6 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("This is question 6");
-// 	$(a1).html("answer1");
-// 	$(a2).html("answer2");
-// 	$(a3).html("answer3");
-// 	$(a4).html("answer4- Correct");
+	$(q1).html("This is question 6");
+	$(a1).html("answer1");
+	$(a2).html("answer2");
+	$(a3).html("answer3");
+	$(a4).html("answer4- Correct");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a4).on('click', function() {
-// 		a4.addClass('correct')
-// 		stop();
-// 		removeAll();
+	// The correct answer turns green.
+	$(a4).on('click', function() {
+		a4.addClass('correct')
+		stop();
+		removeAll();
 		
-// 		question7();
-// 	});
+		question7();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a2).on('click', function() {	
-// 		a2.css('color', 'red');
-// 	});
-// 	$(a1).on('click', function() {
-// 		a1.css('color', 'red');
-// 	});
-// 	$(a3).on('click', function() {
-// 		a3.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a2).on('click', function() {	
+		a2.css('color', 'red');
+	});
+	$(a1).on('click', function() {
+		a1.css('color', 'red');
+	});
+	$(a3).on('click', function() {
+		a3.css('color', 'red');
+	});
+}
 
-// function question7 () {
-// 	timerReset();
+function question7 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("This is question 7");
-// 	$(a1).html("answer1");
-// 	$(a2).html("answer2");
-// 	$(a3).html("answer3- Correct");
-// 	$(a4).html("answer4");
+	$(q1).html("This is question 7");
+	$(a1).html("answer1");
+	$(a2).html("answer2");
+	$(a3).html("answer3- Correct");
+	$(a4).html("answer4");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a3).on('click', function() {
-// 		a3.addClass('correct')
-// 		stop();
-// 		removeAll();
+	// The correct answer turns green.
+	$(a3).on('click', function() {
+		a3.addClass('correct')
+		stop();
+		removeAll();
 		
-// 		question8();
-// 	});
+		question8();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a2).on('click', function() {	
-// 		a2.css('color', 'red');
-// 	});
-// 	$(a1).on('click', function() {
-// 		a1.css('color', 'red');
-// 	});
-// 	$(a4).on('click', function() {
-// 		a4.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a2).on('click', function() {	
+		a2.css('color', 'red');
+	});
+	$(a1).on('click', function() {
+		a1.css('color', 'red');
+	});
+	$(a4).on('click', function() {
+		a4.css('color', 'red');
+	});
+}
 
-// function question8 () {
-// 	timerReset();
+function question8 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("This is question 8");
-// 	$(a1).html("answer1- Correct");
-// 	$(a2).html("answer2");
-// 	$(a3).html("answer3");
-// 	$(a4).html("answer4");
+	$(q1).html("This is question 8");
+	$(a1).html("answer1- Correct");
+	$(a2).html("answer2");
+	$(a3).html("answer3");
+	$(a4).html("answer4");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a1).on('click', function() {
-// 		a1.addClass('correct')
-// 		stop();
-// 		removeAll();
+	// The correct answer turns green.
+	$(a1).on('click', function() {
+		a1.addClass('correct')
+		stop();
+		removeAll();
 		
-// 		question9();
-// 	});
+		question9();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a2).on('click', function() {	
-// 		a2.css('color', 'red');
-// 	});
-// 	$(a3).on('click', function() {
-// 		a3.css('color', 'red');
-// 	});
-// 	$(a4).on('click', function() {
-// 		a4.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a2).on('click', function() {	
+		a2.css('color', 'red');
+	});
+	$(a3).on('click', function() {
+		a3.css('color', 'red');
+	});
+	$(a4).on('click', function() {
+		a4.css('color', 'red');
+	});
+}
 
-// function question9 () {
-// 	timerReset();
+function question9 () {
+	timerReset();
 
-// 	resetColor();
+	resetColor();
 
-// 	$(q1).html("This is question 9");
-// 	$(a1).html("answer1");
-// 	$(a2).html("answer2- Correct");
-// 	$(a3).html("answer3");
-// 	$(a4).html("answer4");
+	$(q1).html("This is question 9");
+	$(a1).html("answer1");
+	$(a2).html("answer2- Correct");
+	$(a3).html("answer3");
+	$(a4).html("answer4");
 
-// 	fadeInChoices()
+	fadeInChoices()
 
-// 	// The correct answer turns green.
-// 	$(a2).on('click', function() {
-// 		a2.addClass('correct')
-// 		stop();
-// 		removeAll();
+	// The correct answer turns green.
+	$(a2).on('click', function() {
+		a2.addClass('correct')
+		stop();
+		removeAll();
 		
-// 		question10();
-// 	});
+		question10();
+	});
 
-// 	//The incorrect answers turn red.
-// 	$(a1).on('click', function() {	
-// 		a1.css('color', 'red');
-// 	});
-// 	$(a3).on('click', function() {
-// 		a3.css('color', 'red');
-// 	});
-// 	$(a4).on('click', function() {
-// 		a4.css('color', 'red');
-// 	});
-// }
+	//The incorrect answers turn red.
+	$(a1).on('click', function() {	
+		a1.css('color', 'red');
+	});
+	$(a3).on('click', function() {
+		a3.css('color', 'red');
+	});
+	$(a4).on('click', function() {
+		a4.css('color', 'red');
+	});
+}
 
 function question10 () {
 	timerReset();
@@ -414,7 +423,7 @@ function question10 () {
 		$('#startButton').on('click', function() {
 			$(startButton).remove();
 			$(youWin).remove();
-
+			number = 21;
 			$('#timer').html('<h2>00</h2>');
 			question1();
 		})
