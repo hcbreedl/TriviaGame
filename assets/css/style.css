@@ -56,9 +56,25 @@ h1 {
 
 #goodJob {
 	height: 240px;
-	width: 955px;
-	font-family:  'Satisfy', cursive;
-	color: white;
-	background-color: #00b33c;
+    width: 922px;
+    font-family: 'Satisfy', cursive;
+    color: white;
+    background-color: rgba(0,179,60,0.8);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 66px;
+    padding: 79px;
+}
+
+#badJob {
+	height: 240px;
+    width: 922px;
+    font-family: 'Satisfy', cursive;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 66px;
+    padding: 79px;
 }
 

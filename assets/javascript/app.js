@@ -5,6 +5,7 @@ var gameOver = $('<button id="gameOver" type="button" class="btn btn-default btn
 var youWin = $('<div id="title" class="col-xs-12"><h1 id="h1">You Win!<br>Play Again?</h1></div>');
 var startButton = $('<button id="startButton" type="button" class="btn btn-primary btn-lg btn-block">Click to Start</button>');
 var goodJob = $('<div id="goodJob">Good Job!</div>');
+var badJob = $('<div id="badJob">Wrong!</div>');
 
 var q1 = $('<div id="button" type="button" class="btn btn-primary btn-lg btn-block"></div>');
 var a1 = $('<button id="button" type="button" class="btn btn-default btn-lg btn-block"></button>');
@@ -13,6 +14,8 @@ var a3 = $('<button id="button" type="button" class="btn btn-default btn-lg btn-
 var a4 = $('<button id="button" type="button" class="btn btn-default btn-lg btn-block"></button>');
 
 number = 21;
+var correctAnswers = 0;
+var incorrectAnswers = 0;
 
 function run(){
     counter = setInterval(decrement, 1000);
@@ -70,13 +73,32 @@ function fadeInChoices() {
 	$('#title').append(a4.hide().fadeIn(3500));
 }
 
-function goodJob() {
-	$('#title').append(goodJob);
-	timeoutID = window.setTimeout(removeGoodJob, 1000);
+function correct() {
+		correctAnswers++;
+		awesome = setTimeout(wellDone, 100);
+		function wellDone() {
+		$('#title').append(goodJob);
+		};
+
+		awesomeAway = setTimeout(wellDoneBye, 1000);
+		function wellDoneBye() {
+		goodJob.fadeOut(1000);
+		// question2();
+		};
 }
 
-function removeGoodJob() {
-  goodJob.remove();
+function incorrect() {
+		incorrectAnswers++;
+		notAwesome = setTimeout(notWellDone, 100);
+		function notWellDone() {
+		$('#title').append(badJob);
+		};
+
+		Away = setTimeout(DoneBye, 1000);
+		function DoneBye() {
+		badJob.fadeOut(1000);
+		question2();
+		};
 }
 
 
@@ -103,24 +125,29 @@ function question1 () {
 	run();
 
 	// The correct answer turns green.
-	$(a2).on('click', function() {
-		
-		stop();
-		
+	$(a2).on('click', function() {	
+		stop();	
 		removeAll();
-		
+		correct();
 		question2();
+		//how to make question2() run after correct() and incorrect() are finished?
 	});
 
 	//The incorrect answers turn red.
 	$(a1).on('click', function() {	
-		a1.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
 	});
 	$(a4).on('click', function() {
-		a4.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
 	});
 };
 
