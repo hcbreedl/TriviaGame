@@ -1,8 +1,10 @@
 $( document ).ready(function() {
 	console.log("ready!");
 
+var correctAnswers = 0;
+var incorrectAnswers = 0;
 var gameOver = $('<button id="gameOver" type="button" class="btn btn-default btn-lg btn-block">Oops! You ran out of time!<br>Click to start over!</button>');
-var youWin = $('<div id="title" class="col-xs-12"><h1 id="h1">You Win!<br>Play Again?</h1></div>');
+var youWin = $('<div id="title" class="last col-xs-12"></div>');
 var startButton = $('<button id="startButton" type="button" class="btn btn-primary btn-lg btn-block">Click to Start</button>');
 var goodJob = $('<div id="goodJob">Good Job!</div>');
 var badJob = $('<div id="badJob">Wrong!</div>');
@@ -14,8 +16,7 @@ var a3 = $('<button id="button" type="button" class="btn btn-default btn-lg btn-
 var a4 = $('<button id="button" type="button" class="btn btn-default btn-lg btn-block"></button>');
 
 number = 21;
-var correctAnswers = 0;
-var incorrectAnswers = 0;
+
 
 function run(){
     counter = setInterval(decrement, 1000);
@@ -74,30 +75,34 @@ function fadeInChoices() {
 }
 
 function correct() {
-		correctAnswers++;
+		correctAnswers = correctAnswers + 1;
+		console.log("correct: " + correctAnswers);
+		console.log("incorrect: " + incorrectAnswers);
 		awesome = setTimeout(wellDone, 100);
 		function wellDone() {
 		$('#title').append(goodJob);
+		goodJob.fadeIn('fast');
 		};
 
 		awesomeAway = setTimeout(wellDoneBye, 1000);
 		function wellDoneBye() {
 		goodJob.fadeOut(1000);
-		// question2();
 		};
 }
 
 function incorrect() {
-		incorrectAnswers++;
+		incorrectAnswers = incorrectAnswers + 1;
+		console.log("correct: " + correctAnswers);
+		console.log("incorrect: " + incorrectAnswers);
 		notAwesome = setTimeout(notWellDone, 100);
 		function notWellDone() {
 		$('#title').append(badJob);
+		badJob.fadeIn('fast');
 		};
 
 		Away = setTimeout(DoneBye, 1000);
 		function DoneBye() {
 		badJob.fadeOut(1000);
-		question2();
 		};
 }
 
@@ -129,8 +134,7 @@ function question1 () {
 		stop();	
 		removeAll();
 		correct();
-		question2();
-		//how to make question2() run after correct() and incorrect() are finished?
+		q2 = setTimeout(question2, 2000);
 	});
 
 	//The incorrect answers turn red.
@@ -138,16 +142,19 @@ function question1 () {
 		stop();
 		removeAll();
 		incorrect();
+		q2 = setTimeout(question2, 2000);
 	});
 	$(a3).on('click', function() {
 		stop();
 		removeAll();
 		incorrect();
+		q2 = setTimeout(question2, 2000);
 	});
 	$(a4).on('click', function() {
 		stop();
 		removeAll();
 		incorrect();
+		q2 = setTimeout(question2, 2000);
 	});
 };
 
@@ -166,22 +173,30 @@ function question2 () {
 
 	// The correct answer turns green.
 	$(a3).on('click', function() {
-		
 		stop();
 		removeAll();
-		
-		question3();
+		correct();
+		q3 = setTimeout(question3, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a1).on('click', function() {	
-		a1.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q3 = setTimeout(question3, 2000);
 	});
 	$(a2).on('click', function() {
-		a2.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q3 = setTimeout(question3, 2000);
 	});
 	$(a4).on('click', function() {
-		a4.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q3 = setTimeout(question3, 2000);
 	});
 }
 
@@ -200,22 +215,30 @@ function question3 () {
 
 	// The correct answer turns green.
 	$(a4).on('click', function() {
-		a4.addClass('correct')
 		stop();
 		removeAll();
-		
-		question4();
+		correct();
+		q4 = setTimeout(question4, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a1).on('click', function() {	
-		a1.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q4 = setTimeout(question4, 2000);
 	});
 	$(a2).on('click', function() {
-		a2.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q4 = setTimeout(question4, 2000);
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q4 = setTimeout(question4, 2000);
 	});
 }
 
@@ -234,22 +257,30 @@ function question4 () {
 
 	// The correct answer turns green.
 	$(a1).on('click', function() {
-		a1.addClass('correct')
 		stop();
 		removeAll();
-		
-		question5();
+		correct();
+		q5 = setTimeout(question5, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a4).on('click', function() {	
-		a4.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q5 = setTimeout(question5, 2000);
 	});
 	$(a2).on('click', function() {
-		a2.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q5 = setTimeout(question5, 2000);
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		q5 = setTimeout(question5, 2000);
 	});
 }
 
@@ -268,22 +299,33 @@ function question5 () {
 
 	// The correct answer turns green.
 	$(a2).on('click', function() {
-		a2.addClass('correct')
 		stop();
 		removeAll();
-		
-		question6();
+		correct();
+		q6 = setTimeout(question6, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a4).on('click', function() {	
-		a4.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q6 = setTimeout(question6, 2000);
 	});
 	$(a1).on('click', function() {
-		a1.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q6 = setTimeout(question6, 2000);
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q6 = setTimeout(question6, 2000);
 	});
 }
 
@@ -302,22 +344,34 @@ function question6 () {
 
 	// The correct answer turns green.
 	$(a4).on('click', function() {
-		a4.addClass('correct')
 		stop();
 		removeAll();
+		correct();
 		
-		question7();
+		q7 = setTimeout(question7, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a2).on('click', function() {	
-		a2.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q7 = setTimeout(question7, 2000);
 	});
 	$(a1).on('click', function() {
-		a1.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q7 = setTimeout(question7, 2000);
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q7 = setTimeout(question7, 2000);
 	});
 }
 
@@ -336,22 +390,34 @@ function question7 () {
 
 	// The correct answer turns green.
 	$(a3).on('click', function() {
-		a3.addClass('correct')
 		stop();
 		removeAll();
+		correct();
 		
-		question8();
+		q8 = setTimeout(question8, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a2).on('click', function() {	
-		a2.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q8 = setTimeout(question8, 2000);
 	});
 	$(a1).on('click', function() {
-		a1.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q8 = setTimeout(question8, 2000);
 	});
 	$(a4).on('click', function() {
-		a4.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q8 = setTimeout(question8, 2000);
 	});
 }
 
@@ -370,22 +436,34 @@ function question8 () {
 
 	// The correct answer turns green.
 	$(a1).on('click', function() {
-		a1.addClass('correct')
 		stop();
 		removeAll();
+		correct();
 		
-		question9();
+		q9 = setTimeout(question9, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a2).on('click', function() {	
-		a2.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q9 = setTimeout(question9, 2000);
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q9 = setTimeout(question9, 2000);
 	});
 	$(a4).on('click', function() {
-		a4.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q9 = setTimeout(question9, 2000);
 	});
 }
 
@@ -404,22 +482,34 @@ function question9 () {
 
 	// The correct answer turns green.
 	$(a2).on('click', function() {
-		a2.addClass('correct')
 		stop();
 		removeAll();
+		correct();
 		
-		question10();
+		q10 = setTimeout(question10, 2000);
 	});
 
 	//The incorrect answers turn red.
 	$(a1).on('click', function() {	
-		a1.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q10 = setTimeout(question10, 2000);
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q10 = setTimeout(question10, 2000);
 	});
 	$(a4).on('click', function() {
-		a4.css('color', 'red');
+		stop();
+		removeAll();
+		incorrect();
+		
+		q10 = setTimeout(question10, 2000);
 	});
 }
 
@@ -441,10 +531,11 @@ function question10 () {
 		
 		stop();
 		$('#timer').html('<h2>00</h2>');
-		
+		correctAnswers++;
 		removeAll();
 		
 		$('#title').append(youWin);
+		$(youWin).html('<p>Thanks for playing!<br>Correct Answers: ' + correctAnswers + ' <br>Incorrect Answers: ' + incorrectAnswers + '<br>Play Again?</p>');
 		$('#title').append(startButton);
 		
 		$('#startButton').on('click', function() {
@@ -452,19 +543,73 @@ function question10 () {
 			$(youWin).remove();
 			number = 21;
 			$('#timer').html('<h2>00</h2>');
+			correctAnswers = 0;
+			incorrectAnswers = 0;
 			question1();
 		})
 	});
 
 	//The incorrect answers turn red.
 	$(a1).on('click', function() {	
-		a1.css('color', 'red');
+		stop();
+		$('#timer').html('<h2>00</h2>');
+		
+		removeAll();
+		incorrectAnswers++;
+		$('#title').append(youWin);
+		$(youWin).html('<p>Thanks for playing!<br>Correct Answers: ' + correctAnswers + ' <br>Incorrect Answers: ' + incorrectAnswers + '<br>Play Again?</p>');
+
+		$('#title').append(startButton);
+		
+		$('#startButton').on('click', function() {
+			$(startButton).remove();
+			$(youWin).remove();
+			number = 21;
+			$('#timer').html('<h2>00</h2>');
+			correctAnswers = 0;
+			incorrectAnswers = 0;
+			question1();
+		})
 	});
 	$(a3).on('click', function() {
-		a3.css('color', 'red');
+		stop();
+		$('#timer').html('<h2>00</h2>');
+		
+		removeAll();
+		incorrectAnswers++;
+		$('#title').append(youWin);
+		$(youWin).html('<p>Thanks for playing!<br>Correct Answers: ' + correctAnswers + ' <br>Incorrect Answers: ' + incorrectAnswers + '<br>Play Again?</p>');
+		$('#title').append(startButton);
+		
+		$('#startButton').on('click', function() {
+			$(startButton).remove();
+			$(youWin).remove();
+			number = 21;
+			$('#timer').html('<h2>00</h2>');
+			correctAnswers = 0;
+			incorrectAnswers = 0;
+			question1();
+		})
 	});
 	$(a2).on('click', function() {
-		a2.css('color', 'red');
+		stop();
+		$('#timer').html('<h2>00</h2>');
+		
+		removeAll();
+		incorrectAnswers++;
+		$('#title').append(youWin);
+		$(youWin).html('<p>Thanks for playing!<br>Correct Answers: ' + correctAnswers + ' <br>Incorrect Answers: ' + incorrectAnswers + '<br>Play Again?</p>');
+		$('#title').append(startButton);
+		
+		$('#startButton').on('click', function() {
+			$(startButton).remove();
+			$(youWin).remove();
+			number = 21;
+			$('#timer').html('<h2>00</h2>');
+			correctAnswers = 0;
+			incorrectAnswers = 0;
+			question1();
+		})
 	});
 }
 
